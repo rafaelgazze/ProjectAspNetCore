@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Aspnetcore.WebAPI", "Aspnetcore.WebAPI\Aspnetcore.WebAPI.xproj", "{EAC1A990-F7DE-44E1-9EFF-37EC9F04C960}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Aspnetcore.Web", "Aspnetcore.Web\Aspnetcore.Web.xproj", "{C76ECA6E-711B-4571-9D0D-1C01E563852F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EAC1A990-F7DE-44E1-9EFF-37EC9F04C960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAC1A990-F7DE-44E1-9EFF-37EC9F04C960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAC1A990-F7DE-44E1-9EFF-37EC9F04C960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76ECA6E-711B-4571-9D0D-1C01E563852F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76ECA6E-711B-4571-9D0D-1C01E563852F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76ECA6E-711B-4571-9D0D-1C01E563852F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76ECA6E-711B-4571-9D0D-1C01E563852F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
