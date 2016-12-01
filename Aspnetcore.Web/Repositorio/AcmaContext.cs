@@ -7,14 +7,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aspnetcore.Web.Context
 {
-    public class AcmaContext : DbContext
+    public class AcmeContext : DbContext
     {
-        public AcmaContext(DbContextOptions<AcmaContext> options) : base(options)
+        public AcmeContext(DbContextOptions<AcmeContext> options) : base(options)
         {
             this.Database.EnsureCreated();
         }
         
-        private DbSet<MateriaPrima> MateriasPrimas { get; set; }
-        private DbSet<Produto> Produtos { get; set; }
+        public  DbSet<MateriaPrima> MateriasPrimas { get; set; }
+        public  DbSet<Produto> Produtos { get; set; }
+        public DbSet<Producao> Producao { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MateriaPrima>().ToTable("MateriaPrima");
+            modelBuilder.Entity<Produto>().ToTable("Produto");
+            modelBuilder.Entity<Producao>().ToTable("Producao");
+        }
     }
 }

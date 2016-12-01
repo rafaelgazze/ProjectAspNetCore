@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Aspnetcore.Web.Context;
+using Aspnetcore.Web.Seed;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace Aspnetcore.Web
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddDbContext<AcmaContext>(
+            services.AddDbContext<AcmeContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection"))
             );
 
@@ -46,7 +47,7 @@ namespace Aspnetcore.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, AcmeContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -55,6 +56,8 @@ namespace Aspnetcore.Web
 
             if (env.IsDevelopment())
             {
+                SeedDatabase.Initialize(context);
+
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
             }
